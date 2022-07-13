@@ -1,15 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-
-type PostItemProps = {
-  title: string;
-  date: string;
-  categories: string[];
-  summary: string;
-  thumbnail: string;
-  link: string;
-};
+import { PostFrontmatterType } from 'types/PostItem.types';
 
 const PostItemWrapper = styled(Link)`
   display: flex;
@@ -83,20 +75,33 @@ const Summary = styled.div`
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-
   font-size: 16px;
 `;
+
+// type PostItemProps = {
+//   title: string;
+//   date: string;
+//   categories: string[];
+//   summary: string;
+//   thumbnail: {
+//     publicURL: string;
+//   };
+//   link: string;
+// };
+
+type PostItemProps = PostFrontmatterType & { link: string };
+
 const PostItem: FunctionComponent<PostItemProps> = function ({
   title,
   date,
   categories,
   summary,
-  thumbnail,
+  thumbnail: { publicURL },
   link,
 }) {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage src={thumbnail} alt="Post Item Image" />
+      <ThumbnailImage src={publicURL} alt="Post Item Image" />
 
       <PostItemContent>
         <Title>{title}</Title>
