@@ -10,7 +10,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   margin-top: 50px;
 `;
@@ -18,6 +18,7 @@ const Title = styled.h1`
 const Desc = styled.p`
   font-size: 16px;
 `;
+
 const Introduction: FunctionComponent = () => {
   return (
     <Background>
