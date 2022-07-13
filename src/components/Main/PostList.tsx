@@ -18,7 +18,12 @@ const PostListWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   width: 100vw;
-  padding: 0px 256px;
+  padding: 0px 24vw;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 `;
 
 const PostList: FunctionComponent = function () {

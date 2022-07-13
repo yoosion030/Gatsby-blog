@@ -21,7 +21,10 @@ type GatsbyLinkProps = {
 
 const CategoryListWrapper = styled.div`
   width: 100vw;
-  padding: 90px 256px;
+  padding: 8vh 24vw;
+  @media (max-width: 768px) {
+    padding: 5vh 24vw 3vh;
+  }
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -37,6 +40,10 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
