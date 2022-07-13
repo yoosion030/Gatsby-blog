@@ -23,7 +23,7 @@ type PostListProps = {
 const PostList: FunctionComponent<PostListProps> = ({ posts }) => {
   return (
     <PostListWrapper>
-      {posts.map(({ node: { id, frontmatter } }: PostType) => (
+      {posts.map(({ node: { id, frontmatter } }) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
       ))}
     </PostListWrapper>
